@@ -6,11 +6,21 @@
 /*   By: mamottet <mamottet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:53:06 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:55:20 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/25 10:51:16 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"	
+#include "../libft.h"	
+
+size_t	ft_gnl_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
 
 static char	*give_me_tmp(int fd, char *buf, char *tmp)
 {
@@ -48,7 +58,7 @@ static char	*extract(char *line)
 		count++;
 	if (line[count] == '\0' || line[1] == '\0')
 		return (0);
-	backup = ft_gnl_substr(line, count + 1, ft_strlen(line) - count);
+	backup = ft_gnl_substr(line, count + 1, ft_gnl_strlen(line) - count);
 	if (*backup == '\0')
 	{
 		free(backup);

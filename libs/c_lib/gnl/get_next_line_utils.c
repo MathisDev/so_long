@@ -6,11 +6,11 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:53:37 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:54:06 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/25 10:51:30 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../libft.h"	
 
 char	*ft_gnl_substr(char const *s, unsigned int start, size_t len)
 {
@@ -56,7 +56,7 @@ char	*ft_gnl_strdup(const char *s)
 	char	*str;
 
 	i = 0;
-	j = ft_strlen(s);
+	j = ft_gnl_strlen(s);
 	str = (char *)malloc(sizeof(*str) * (j + 1));
 	while (i < j)
 	{
@@ -75,7 +75,7 @@ char	*ft_gnl_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = (char *)malloc(sizeof(char) * (ft_gnl_strlen(s1) + ft_gnl_strlen(s2) + 1));
 	if (str == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
