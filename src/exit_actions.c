@@ -6,16 +6,15 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:12:12 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:18:14 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/26 14:04:25 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-// Function to free() and quit the program
 int	ft_exit_program(t_game_instance *game_init)
 {
-	ft_printf("Closing the window and program..\n");
+	ft_printf("C la fin du programme\n");
 	ft_free_img(game_init);
 	ft_free_map(game_init);
 	ft_cleanup(game_init);
@@ -26,10 +25,9 @@ int	ft_exit_program(t_game_instance *game_init)
 	return (0);
 }
 
-// Function to free() and reset the game (start in the same point)
 void	ft_reset_game(t_game_instance *game_init)
 {
-	ft_printf("\nThe game has been reset, good luck.\n");
+	ft_printf("\nThe game restart\n");
 	ft_free_img(game_init);
 	ft_free_map(game_init);
 	free(game_init->resolutions_init.settings_name_window);
@@ -40,7 +38,6 @@ void	ft_reset_game(t_game_instance *game_init)
 	main(game_init->argc_tmp, game_init->argv_tmp);
 }
 
-// Function to free the name in window
 void	ft_cleanup(t_game_instance *game_init)
 {
 	if (game_init->resolutions_init.settings_name_window != NULL)

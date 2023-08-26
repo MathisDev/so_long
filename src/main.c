@@ -6,13 +6,12 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:14:27 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:14:30 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/26 14:03:12 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-// Function to starts the game instance and initializes the necessary structures
 int	main(int argc, char **argv)
 {
 	t_game_instance	game_init;
@@ -34,7 +33,6 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-// Function to initialize all structs in the game instance + malloc in objs
 void	ft_struct_init(t_game_instance *game_init)
 {
 	t_game_objs	*objects;

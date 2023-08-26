@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:14:09 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:14:12 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/25 13:02:28 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,23 @@ void	ft_initialize_game(t_game_instance *game_init)
 void	ft_img_init(t_game_instance *game_init)
 {
 	ft_check_img(game_init, &game_init->game_objs.player_up,
-		"rscs/textures/Player/walkUP_00.xpm");
+		"m_t/textures/Player/walkUP_00.xpm");
 	ft_check_img(game_init, &game_init->game_objs.player_down,
-		"rscs/textures/Player/walkDown_00.xpm");
+		"m_t/textures/Player/walkDown_00.xpm");
 	ft_check_img(game_init, &game_init->game_objs.player_right,
-		"rscs/textures/Player/walkRight_00.xpm");
+		"m_t/textures/Player/walkRight_00.xpm");
 	ft_check_img(game_init, &game_init->game_objs.player_left,
-		"rscs/textures/Player/walkLeft_00.xpm");
+		"m_t/textures/Player/walkLeft_00.xpm");
 	ft_check_img(game_init, &game_init->game_objs.collectible,
-		"rscs/textures/Collectibles/star_00.xpm");
+		"m_t/textures/Collectibles/star_00.xpm");
 	ft_check_img(game_init, &game_init->game_objs.floor,
-		"rscs/textures/Tiles/midBlocks_02.xpm");
+		"m_t/textures/Tiles/midBlocks_02.xpm");
 	ft_check_img(game_init, &game_init->game_objs.exit_open,
-		"rscs/textures/Exit/exit_open_01.xpm");
+		"m_t/textures/Exit/exit_open_01.xpm");
 	ft_check_img(game_init, &game_init->game_objs.exit_close,
-		"rscs/textures/Exit/exit_close_01.xpm");
+		"m_t/textures/Exit/exit_close_01.xpm");
 	ft_check_img(game_init, &game_init->game_objs.wall,
-		"rscs/textures/Tiles/blockSimple.xpm");
+		"m_t/textures/Tiles/blockSimple.xpm");
 }
 
 void	ft_check_img(t_game_instance *game_init, void **image, char *path)

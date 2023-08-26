@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:33:48 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:34:09 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/26 14:28:27 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 
 # define CELL_SIZE 32
 
-// OBJECTS : IMAGES
+// Struct
 typedef struct s_game_objs
 {
 	void	*player;
@@ -63,7 +63,6 @@ typedef struct s_game_objs
 	int		img_height;
 }	t_game_objs;
 
-// POSITIONS OF PLAYER AND EXIT
 typedef struct s_game_positions
 {
 	int	player_row;
@@ -72,7 +71,6 @@ typedef struct s_game_positions
 	int	exit_col;
 }	t_game_positions;
 
-// GAME DATA OF THE OBJECTS INSIDE THE MATRICE (INTERNAL)
 typedef struct s_game_data
 {
 	int	count_player;
@@ -84,7 +82,6 @@ typedef struct s_game_data
 	int	endgame;
 }	t_game_data;
 
-// GAME RESOLUTIONS 
 typedef struct s_game_resolutions
 {
 	int		settings_map_width;
@@ -93,7 +90,6 @@ typedef struct s_game_resolutions
 	char	*settings_name_map;
 }	t_game_resolutions;
 
-// GAME DATA OF MATRICE (EXTERN)
 typedef struct s_map_data
 {
 	int					first_read_matrice;
@@ -105,7 +101,6 @@ typedef struct s_map_data
 	t_game_positions	positions;
 }	t_map_data;
 
-// MAIN GAME CONTROLLER
 typedef struct s_game_instance
 {
 	void				*mlx_ptr;
@@ -119,85 +114,53 @@ typedef struct s_game_instance
 	t_game_objs			game_objs;
 }	t_game_instance;
 
-// --------------------- STARTS HERE
-// Function to starts and initializes
+// --------------------- FUNCTION -------------- //
 int			main(int argc, char **argv);
 // --------------------- GAME INIT
-// Function to initialize all structs
 void		ft_struct_init(t_game_instance *game_init);
-// Function to initializes and sets the properties
 void		ft_initialize_game(t_game_instance *game_init);
 // --------------------- GAME EVENTS
-// Function to check an event handler for keyboard
 int			ft_check_keyboard(int key, t_game_instance *game_init);
 int			ft_non_special(int key, t_game_instance *game_init);
-// Function to free() and quit the program
 int			ft_exit_program(t_game_instance *game_init);
-// Function to free() and reset the game
 void		ft_reset_game(t_game_instance *game_init);
 // --------------------- MAP VALIDATIONS AND MAP DATA
-// Function to open and read the map file
 int			ft_open_map(char *map, t_game_instance *game_init);
-// Function to count the map content for ft_calloc (reserved space to read)
 int			ft_read_count_map(char *map);
 int			ft_count_lines(int fd);
-// Function to calculate the map structure (rows, cols and matrice)
 int			ft_map_dimensions(t_game_instance *game_init);
 int			get_rows_count(t_game_instance *game_init);
 int			get_cols_count(t_map_data *map_init);
-// Function to reads a map from a file, validates it, and sets the instance
 int			ft_read_map(int fd, t_game_instance *game_init);
 int			ft_check_read(t_game_instance *game_init);
-// Function to checks if the map has a valid .ber extension and path/
 int			ft_map_extension(char *map);
-// Function to checks if the map is valid
 int			ft_is_valid_map(t_game_instance *game_init);
-// Function to checks if the map is rectangular/square
 int			ft_is_map_shape_valid(t_game_instance *game_init);
-// Function to checks if the map is closed/surrounded by walls
 int			ft_is_wall(t_game_instance *game_init);
-// Function to counts the number of objects
 int			ft_count_map_objects(t_game_instance *game_init);
-// Function checks if the map has at 1 player, 1 exit >= collectible
 int			ft_have_requires(t_game_instance *game_init);
 // --------------------- GAME EVENTS/ACTIONS + GRAPHICS
-// Function to call for events
 void		ft_gameplay_start(t_game_instance *game_init);
-// Function to takes a keyboard input and performs corresponding actions
 int			ft_events_pressed(t_game_instance *game_init, int column, int row);
 void		ft_win(t_game_instance *game_init);
-// Function to prints the current number of movements on the terminal shell
 int			ft_print_shell(t_game_instance *game_init);
-// Function to frees all the memory allocated during the game and exit
 int			ft_exit_program(t_game_instance *game_init);
-// Function to frees all the memory allocated and reset game
 void		ft_reset_game(t_game_instance *game_init);
-// Function to finds the player position and performs actions
 void		ft_locate_player(t_game_instance *game_init);
 // --------------------- GRAPHICS + EVENTS
-// Function to loads the different game images
 void		ft_img_init(t_game_instance *game_init);
-// Function to validate the files .xpm
 void		ft_check_img(t_game_instance *game_init, void **image, char *path);
-// Function to draws the game map on screen, placing each object
 int			ft_map_draw(t_game_instance *game_init);
 void		ft_map_continues(t_game_instance *game_init, int column, int row);
-// Function to sets the image of an object in the corresponding cell on game
 void		ft_set(t_game_instance *game_init, void *img, int wid, int hgt);
 // --------------------- I WANT TO BREAK [FREE]
-// Function to free the matrice[][]
 void		ft_free_map(t_game_instance *game_init);
-// Function to free all images.xpm
 void		ft_free_img(t_game_instance *game_init);
-// Function to free the name in window
 void		ft_cleanup(t_game_instance *game_init);
 // --------------------- CUSTOM ERRORS MESSAGE
-// Function to returns feedback for errors when init
 void		ft_error_init(int n);
-// Function to returns feedback for errors with map
 void		ft_error_map(int n);
-// --------------------- AUXILIARY FUNCTIONS
-// Function to compares two strings character (in ASCII value)
+// --------------------- UTILS
 int			ft_strcmp(const char *s1, const char *s2);
 
 #endif

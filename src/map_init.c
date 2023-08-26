@@ -6,13 +6,12 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:14:41 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:14:44 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/25 11:39:31 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-// Function to open and read the map file
 int	ft_open_map(char *map, t_game_instance *game_init)
 {
 	int			fd;

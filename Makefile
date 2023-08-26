@@ -6,12 +6,12 @@
 #    By: mamottet <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 16:19:23 by mamottet          #+#    #+#              #
-#    Updated: 2023/08/25 10:57:53 by mamottet         ###   ########.fr        #
+#    Updated: 2023/08/25 11:33:44 by mamottet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Compile 
-CC = gcc
+CC = cc
 FLG = -Wall -Wextra -Werror -I$(PATH_LIB)
 COMP = $(CC) $(FLG)
 

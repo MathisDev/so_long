@@ -6,14 +6,12 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:13:37 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:13:40 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/26 14:25:02 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-// Function to sets up the game window and calls ft_map_draw 
-//		to draw the game map (is the gear of the game)
 void	ft_gameplay_start(t_game_instance *game_init)
 {
 	mlx_hook(game_init->win_ptr, 17, 0, ft_exit_program, game_init);
@@ -21,7 +19,6 @@ void	ft_gameplay_start(t_game_instance *game_init)
 	mlx_loop_hook(game_init->mlx_ptr, &ft_map_draw, game_init);
 }
 
-// Function to prints the current number of movements on the terminal
 int	ft_print_shell(t_game_instance *game_init)
 {
 	static int	previous_count_movements = -1;
@@ -36,7 +33,6 @@ int	ft_print_shell(t_game_instance *game_init)
 	return (1);
 }
 
-// Function to takes a keyboard input and performs corresponding actions
 int	ft_events_pressed(t_game_instance *game_init, int column, int row)
 {
 	int	new_row;
@@ -64,9 +60,6 @@ int	ft_events_pressed(t_game_instance *game_init, int column, int row)
 	return (ft_print_shell(game_init));
 }
 
-// Function to finds the player position and performs actions like moving the
-//	player or removing a collectible based on the block they're trying to move
-// to after the player presses a key
 void	ft_locate_player(t_game_instance *game_init)
 {
 	int	col;
