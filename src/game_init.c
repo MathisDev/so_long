@@ -6,13 +6,12 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:14:09 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/25 13:02:28 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/26 14:51:24 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-// Function to initializes the window and sets the init properties of the game
 void	ft_initialize_game(t_game_instance *game_init)
 {
 	game_init->mlx_ptr = mlx_init();
@@ -29,7 +28,6 @@ void	ft_initialize_game(t_game_instance *game_init)
 		ft_error_init(38);
 }
 
-// Function to loads the different game images from image files (XPM format)
 void	ft_img_init(t_game_instance *game_init)
 {
 	ft_check_img(game_init, &game_init->game_objs.player_up,
@@ -59,7 +57,7 @@ void	ft_check_img(t_game_instance *game_init, void **image, char *path)
 
 	*image = mlx_xpm_file_to_image(game_init->mlx_ptr, path, &width, &height);
 	if (*image == NULL)
-	{	
+	{
 		ft_error_init(1);
 		ft_exit_program(game_init);
 	}

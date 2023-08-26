@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:33:48 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/26 14:28:27 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/26 14:53:16 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,15 @@
 # include "../libs/c_lib/libft.h"
 
 # include "custom_letters.h"
-# include <fcntl.h> // Read
-# include <string.h> // Strerror
+# include <fcntl.h>
+# include <string.h>
 
-// GAME OBJECTS KEYS
 # define PLAYER 'P'
 # define EXIT 'E'
 # define COLLECTIBLE 'C'
 # define WALL '1'
 # define EMPTY '0'
 
-// GAME KEYWORDS
 # define ESC 65307
 # define W 119
 # define UP 65362
