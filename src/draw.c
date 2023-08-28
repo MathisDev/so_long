@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:11:41 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:19:19 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:37:46 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	ft_map_draw(t_game_instance *game_init)
 		column = 0;
 		while (game_init->map_init.matrice[row][column])
 		{
-			if (game_init->map_init.matrice[row][column] == WALL)
+			if (game_init->map_init.matrice[row][column] == '1')
 				ft_set(game_init, game_init->game_objs.wall, column, row);
-			if (game_init->map_init.matrice[row][column] == EMPTY)
+			if (game_init->map_init.matrice[row][column] == '0')
 				ft_set(game_init, game_init->game_objs.floor, column, row);
 			if (game_init->map_init.matrice[row][column] == PLAYER)
 				ft_set(game_init, game_init->game_objs.player, column, row);

@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:13:51 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/26 14:02:00 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:37:21 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_non_special(int key, t_game_instance *game_init)
 void	ft_win(t_game_instance *game_init)
 {
 	game_init->map_init.matrice[game_init->positions_init.player_row]
-	[game_init->positions_init.player_col] = EMPTY;
+	[game_init->positions_init.player_col] = '0';
 	game_init->game_data.count_movements++;
 	ft_printf("\nGreat! You have found all the stars in the game.\n");
 	ft_exit_program(game_init);

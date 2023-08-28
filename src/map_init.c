@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:14:41 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/25 11:39:31 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:19:54 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ int	ft_open_map(char *map, t_game_instance *game_init)
 	return (1);
 }
 
-// Function to count the map content for ft_calloc
-// (reserved space to ft_read_map() function)
 int	ft_read_count_map(char *map)
 {
 	int	fd;
@@ -83,8 +81,6 @@ int	ft_count_lines(int fd)
 	return (count);
 }
 
-// Function to reads a map from a file, validates it, and sets
-//		it in the game instance
 int	ft_read_map(int fd, t_game_instance *game_init)
 {
 	int		i;

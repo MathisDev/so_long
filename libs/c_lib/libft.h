@@ -6,7 +6,7 @@
 /*   By: mamottet <mamottet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 15:08:55 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/27 09:32:14 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:28:12 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
+#  define BUFFER_SIZE 42
 # endif
 
 typedef struct s_split_next
@@ -65,20 +65,17 @@ void		ft_putnbr_fd(int n, int fd);
 
 // printf
 
-void	ft_putcharacter_length(char character, int *length);
-void	ft_string(char *args, int *length);
-void	ft_number(int number, int *length);
-void	ft_hexadecimal(unsigned int x, int *length, char x_or_x);
-void	ft_unsigned_int(unsigned int u, int *length);
-void	ft_pointer(size_t pointer, int *length);
-int	ft_printf(const char *string, ...);
-size_t	ft_gnl_strlen(const char *s);
-char	*ft_gnl_substr(char const *s, unsigned int start, size_t len);
-char	*ft_gnl_strchr(const char *s, int i);
-char	*ft_gnl_strdup(const char *s);
-char	*ft_gnl_strjoin(char const *s1, char const *s2);
-char	*get_next_line(int fd);
-
-
-
+void		ft_putcharacter_length(char character, int *length);
+void		ft_string(char *args, int *length);
+void		ft_number(int number, int *length);
+void		ft_hexadecimal(unsigned int x, int *length, char x_or_x);
+void		ft_unsigned_int(unsigned int u, int *length);
+void		ft_pointer(size_t pointer, int *length);
+int			ft_printf(const char *string, ...);
+size_t		ft_gnl_strlen(const char *s);
+char		*ft_gnl_substr(char const *s, unsigned int start, size_t len);
+char		*ft_gnl_strchr(const char *s, int i);
+char		*ft_gnl_strdup(const char *s);
+char		*ft_gnl_strjoin(char const *s1, char const *s2);
+char		*get_next_line(int fd);
 #endif

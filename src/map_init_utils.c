@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:14:58 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/24 16:36:42 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:19:17 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int	get_rows_count(t_game_instance *game_init)
 	return (1);
 }
 
-// Function to checks if the map has a valid .ber extension and path/
 int	ft_map_extension(char *map)
 {
 	char		*extension;

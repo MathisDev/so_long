@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:13:37 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/26 14:25:02 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:38:43 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int	ft_events_pressed(t_game_instance *game_init, int column, int row)
 	new_row = game_init->positions_init.player_row + row;
 	new_col = game_init->positions_init.player_col + column;
 	current_tile = game_init->map_init.matrice[new_row][new_col];
-	if (current_tile == EMPTY || current_tile == COLLECTIBLE)
+	if (current_tile == '0' || current_tile == COLLECTIBLE)
 	{
 		game_init->map_init.matrice[new_row][new_col] = PLAYER;
 		game_init->map_init.matrice[game_init->positions_init.player_row]
-		[game_init->positions_init.player_col] = EMPTY;
+		[game_init->positions_init.player_col] = '0';
 		game_init->positions_init.player_row = new_row;
 		game_init->positions_init.player_col = new_col;
 		if (current_tile == COLLECTIBLE)

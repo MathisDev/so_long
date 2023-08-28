@@ -6,7 +6,7 @@
 /*   By: mamottet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:33:48 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/26 14:53:16 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:22:26 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 
 # include "../libs/minilibx-linux/mlx.h"
 # include "../libs/c_lib/libft.h"
-
 # include "custom_letters.h"
 # include <fcntl.h>
 # include <string.h>
-
-# define PLAYER 'P'
-# define EXIT 'E'
-# define COLLECTIBLE 'C'
-# define WALL '1'
-# define EMPTY '0'
-
+// MAP
+# define PLAYER 80
+# define EXIT 69
+# define COLLECTIBLE 67
+// KEY
 # define ESC 65307
 # define W 119
 # define UP 65362
@@ -36,14 +33,13 @@
 # define D 100
 # define RIGHT 65363
 # define RESTART 114
-
+// FILES
 # define MAX_FILES 1
 
 # define TRUE 1
 # define FALSE 0
 
 # define CELL_SIZE 32
-
 // Struct
 typedef struct s_game_objs
 {
@@ -114,15 +110,15 @@ typedef struct s_game_instance
 
 // --------------------- FUNCTION -------------- //
 int			main(int argc, char **argv);
-// --------------------- GAME INIT
+// --------------------- GAME INIT  -------------- //
 void		ft_struct_init(t_game_instance *game_init);
 void		ft_initialize_game(t_game_instance *game_init);
-// --------------------- GAME EVENTS
+// --------------------- GAME EVENTS  -------------- //
 int			ft_check_keyboard(int key, t_game_instance *game_init);
 int			ft_non_special(int key, t_game_instance *game_init);
 int			ft_exit_program(t_game_instance *game_init);
 void		ft_reset_game(t_game_instance *game_init);
-// --------------------- MAP VALIDATIONS AND MAP DATA
+// --------------------- MAP VALIDATIONS AND MAP DATA -------------- //
 int			ft_open_map(char *map, t_game_instance *game_init);
 int			ft_read_count_map(char *map);
 int			ft_count_lines(int fd);
@@ -137,7 +133,7 @@ int			ft_is_map_shape_valid(t_game_instance *game_init);
 int			ft_is_wall(t_game_instance *game_init);
 int			ft_count_map_objects(t_game_instance *game_init);
 int			ft_have_requires(t_game_instance *game_init);
-// --------------------- GAME EVENTS/ACTIONS + GRAPHICS
+// --------------------- GAME EVENTS/ACTIONS + GRAPHICS    
 void		ft_gameplay_start(t_game_instance *game_init);
 int			ft_events_pressed(t_game_instance *game_init, int column, int row);
 void		ft_win(t_game_instance *game_init);
@@ -160,5 +156,4 @@ void		ft_error_init(int n);
 void		ft_error_map(int n);
 // --------------------- UTILS
 int			ft_strcmp(const char *s1, const char *s2);
-
 #endif
