@@ -6,7 +6,7 @@
 /*   By: mamottet <mamottet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 15:08:55 by mamottet          #+#    #+#             */
-/*   Updated: 2023/08/26 14:59:26 by mamottet         ###   ########.fr       */
+/*   Updated: 2023/08/27 09:32:14 by mamottet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <stddef.h>
 # include <stdlib.h>
+
 # ifndef BUFFER_SIZE
 # define BUFFER_SIZE 42
 # endif
